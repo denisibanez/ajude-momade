@@ -1,5 +1,5 @@
-import HeaderComponent from '@/components/HeaderComponent/HeaderComponent.vue';
-import FullBannerComponent from '@/components/FullBannerComponent/FullBannerComponent.vue';
+import HeaderComponent from '@/components/headerComponent/HeaderComponent.vue';
+import FullBannerComponent from '@/components/fullBannerComponent/FullBannerComponent.vue';
 
 export {
     HeaderComponent,
