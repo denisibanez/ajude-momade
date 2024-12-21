@@ -128,6 +128,11 @@ margin: 0;
 padding: 0;
 }
 
+.container {
+      max-width: 1453px;
+      margin: 0 auto;
+    }
+
 body {
   font-family: 'Poppins', serif;
   background: colors.$primary;

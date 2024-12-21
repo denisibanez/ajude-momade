@@ -6,21 +6,16 @@
 
 <!-- Full Banner -->
 <FullBannerComponent />
+
+<!-- Highlight Component -->
+<HighlightComponent />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
- import { HeaderComponent, FullBannerComponent } from '@/components'; 
+ import { HeaderComponent, FullBannerComponent, HighlightComponent } from '@/components'; 
 </script>
 
 <style lang="scss" scoped>
-.home {
-  &__wrapper {
-    .container {
-      max-width: 1453px;
-      margin: 0 auto;
-    }
-  }
-} 
 </style>

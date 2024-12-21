@@ -7,6 +7,11 @@ const router = createRouter({
       path: '',
       component: () => import('@/views/home/Home.vue'),
     },
+
+    {
+      path: '/:catchAll(.*)*',
+      component: () => import('@/views/comingSoon/ComingSoon.vue'),
+    },
   ],
 });
 
