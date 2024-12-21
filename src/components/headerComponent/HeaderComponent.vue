@@ -135,6 +135,7 @@ watch(() => route.path, (value: string) => {
   &__logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
     img {
       position: relative;
       top:2px;
