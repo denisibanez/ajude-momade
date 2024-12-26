@@ -4,8 +4,8 @@ import HighlightComponent from '@/components/highlightComponent/HighlightCompone
 import ButtonsComponent from '@/components/base/buttonsComponent/ButtonsComponent.vue';
 
 export {
-    HeaderComponent,
-    FullBannerComponent,
-    HighlightComponent,
-    ButtonsComponent
-}
+  HeaderComponent,
+  FullBannerComponent,
+  HighlightComponent,
+  ButtonsComponent,
+};

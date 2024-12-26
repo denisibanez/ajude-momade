@@ -1,11 +1,16 @@
 <template>
   <div class="fullBannerComponent__wrapper">
-    <div class="fullBannerComponent__image">
-    </div>
+    <div class="fullBannerComponent__image"></div>
 
     <div class="fullBannerComponent__information">
-      <h1 class="poppins-semibold">Transforme nossa comunidade em Moçambique!</h1>
-      <p class="source-sans-pro">Com seu apoio, podemos melhorar a vida de crianças e famílias, construir um futuro mais brilhante. Doe, compartilhe e faça parte dessa mudança positiva que impactará gerações!</p>
+      <h1 class="poppins-semibold">
+        Transforme nossa comunidade em Moçambique!
+      </h1>
+      <p class="source-sans-pro">
+        Com seu apoio, podemos melhorar a vida de crianças e famílias, construir
+        um futuro mais brilhante. Doe, compartilhe e faça parte dessa mudança
+        positiva que impactará gerações!
+      </p>
 
       <small class="source-sans-pro" @click="navigate"> Doações</small>
     </div>
@@ -13,13 +18,13 @@
 </template>
 
 <script setup lang="ts">
-  import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
-  const router = useRouter();
+const router = useRouter();
 
-  const navigate = () => {
-    router.push('/doacoes');
-  }
+const navigate = () => {
+  router.push('/doacoes');
+};
 </script>
 
 <style lang="scss" scoped>
@@ -40,14 +45,14 @@
   }
 
   &__image {
-    width:100%;
+    width: 100%;
     height: 75vh;
     background: url('@/assets/images/full-banner.png') no-repeat center;
     background-size: cover;
     position: absolute;
     top: 0;
 
-    @media(max-width: 1024px) {
+    @media (max-width: 1024px) {
       height: 35vh;
       position: relative;
     }
@@ -62,7 +67,6 @@
     @media screen and (max-width: 1024px) {
       margin-top: -8rem;
       margin-bottom: 2rem;
-      
     }
 
     h1 {
@@ -75,12 +79,11 @@
         font-size: 35px;
         line-height: 35px;
         margin: 0 15px;
-        
       }
     }
 
     p {
-      font-size:23px;
+      font-size: 23px;
       line-height: 30px;
       text-align: left;
       max-width: 450px;
@@ -89,7 +92,6 @@
 
       @media screen and (max-width: 1024px) {
         margin: 35px 15px 25px;
-        
       }
     }
 

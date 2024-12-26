@@ -3,7 +3,7 @@
     <ul>
       <li v-for="(item, key) in highlights" :key="key">
         <div>
-          <img :src="returnIcon(item.icon)" alt="">
+          <img :src="returnIcon(item.icon)" alt="" />
         </div>
         <div>
           <span class="source-sans-pro">{{ item.label }}</span>
@@ -32,19 +32,19 @@ const highlights: Ref<HighlightInterface[]> = ref([
     id: 1,
     label: 'Doações',
     value: '20',
-    icon: 'donate'
+    icon: 'donate',
   },
   {
     id: 2,
     label: 'Vaquinha virtual',
     value: '0k',
-    icon: 'dollar'
+    icon: 'dollar',
   },
   {
     id: 3,
     label: 'Total Arrecadado',
     value: '2k',
-    icon: 'dollar'
+    icon: 'dollar',
   },
 ]);
 
@@ -63,123 +63,121 @@ const returnIcon = (icon: string) => {
 <style lang="scss" scoped>
 @use '@/assets/scss/colors.scss' as colors;
 
-  .highlightComponet {
-    &__wrapper {
+.highlightComponet {
+  &__wrapper {
+    position: absolute;
+    z-index: 9;
+    bottom: 30px;
+    margin: 0 auto;
+    width: 1453px;
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      position: relative;
+    }
+
+    &:before {
+      content: '';
       position: absolute;
-      z-index: 9;
-      bottom: 30px;
-      margin: 0 auto;
-      width: 1453px;
+      width: 100%;
+      height: 120px;
+      background: #feece4;
+      left: 0;
+      bottom: -30px;
+      z-index: -1;
+    }
 
-      @media screen and (max-width: 1024px) {
-        width: 100%;
-        position: relative;
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
       }
 
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 120px;
-        background: #feece4;
-        left: 0;
-        bottom: -30px;
-        z-index: -1;
-      }
-
-      ul {
+      li {
         display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        justify-content: center;
-        
-        @media(max-width: 1024px) {
-          flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        background: colors.$accent-dark;
+        width: 413px;
+        height: 180px;
+
+        &:first-child {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          background: colors.$accent-light;
         }
 
-        li {
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-          background: colors.$accent-dark;
-          width: 413px;
-          height: 180px;
-          
-          &:first-child {
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            background: colors.$accent-light;
+        &:nth-child(2) {
+          position: relative;
+          bottom: 16px;
+
+          @media screen and (max-width: 1024px) {
+            bottom: 0;
           }
 
-          &:nth-child(2) {
-            position: relative;
-            bottom: 16px;
+          &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 16px;
+            background: colors.$accent-light;
+            left: 0;
+            bottom: -16px;
+            z-index: 10;
 
             @media screen and (max-width: 1024px) {
-              bottom: 0;
+              display: none;
             }
+          }
+        }
 
-            &:before {
-              content: '';
-              position: absolute;
-              width: 100%;
-              height: 16px;
-              background: colors.$accent-light;
-              left: 0;
-              bottom:-16px;
-              z-index: 10;
+        &:last-child {
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          background: colors.$accent-light;
+        }
 
-              @media screen and (max-width: 1024px) {
-                display: none;
-                
-              }
-            }
+        div {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+
+          img {
+            margin-left: 2rem;
           }
 
           &:last-child {
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            background: colors.$accent-light;
+            margin-top: 1.5rem;
           }
+        }
 
-          div {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
+        span {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-left: 0.5rem;
+          color: colors.$secondary;
 
-            img {
-              margin-left: 2rem;
-            }
-
-            &:last-child {
-              margin-top: 1.5rem;
-            }
+          &:last-child {
+            font-size: 4rem;
+            font-weight: 700;
+            color: colors.$white;
           }
+        }
 
-          span {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-            color: colors.$secondary;
-
-            &:last-child {
-              font-size: 4rem;
-              font-weight: 700;
-              color: colors.$white;
-            }
-          }
-
-
-          @media(max-width: 1024px) {
-            margin: 15px auto;
-            height: 200px;
-            max-width: 90%;
-            border-radius: 10px;
-          }
+        @media (max-width: 1024px) {
+          margin: 15px auto;
+          height: 200px;
+          max-width: 90%;
+          border-radius: 10px;
         }
       }
     }
   }
+}
 </style>

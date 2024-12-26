@@ -1,25 +1,48 @@
 <template>
   <div class="headerComponent__wrapper">
     <div class="headerComponent__logo">
-      <img src="@/assets/images/brand.png" alt="Logo" @click="() => router.push('/')" />
+      <img
+        src="@/assets/images/brand.png"
+        alt="Logo"
+        @click="() => router.push('/')"
+      />
     </div>
 
     <div class="headerComponent__menu" :class="{ 'is-active': isMenuActive }">
       <ul>
-        <li :class="['source-sans-pro', { 'active' : item.active }]" v-for="(item, key) in menu" :key="key" @click="navigate(item)">
-         <span>{{ item.name }}</span>
+        <li
+          :class="['source-sans-pro', { active: item.active }]"
+          v-for="(item, key) in menu"
+          :key="key"
+          @click="navigate(item)"
+        >
+          <span>{{ item.name }}</span>
         </li>
         <li v-if="isMobile">
-          <ButtonsComponent v-for="(button, key) in buttons" :key="key" v-bind="button" @handleButtonClick="navigate(button)" />
+          <ButtonsComponent
+            v-for="(button, key) in buttons"
+            :key="key"
+            v-bind="button"
+            @handleButtonClick="navigate(button)"
+          />
         </li>
       </ul>
     </div>
-    
+
     <div class="headerComponent__buttons">
-      <ButtonsComponent v-for="(button, key) in buttons" :key="key" v-bind="button" @handleButtonClick="navigate(button)" />
+      <ButtonsComponent
+        v-for="(button, key) in buttons"
+        :key="key"
+        v-bind="button"
+        @handleButtonClick="navigate(button)"
+      />
     </div>
 
-    <button class="hamburger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu">
+    <button
+      class="hamburger"
+      :class="{ 'is-active': isMenuActive }"
+      @click="toggleMenu"
+    >
       <span class="hamburger__line"></span>
       <span class="hamburger__line"></span>
       <span class="hamburger__line"></span>
@@ -51,26 +74,26 @@ const menu: Ref<MenuInterface[]> = ref([
     id: 1,
     name: 'Início',
     active: true,
-    link: '/'
+    link: '/',
   },
   {
     id: 2,
     name: 'Conheça',
     active: false,
-    link: '/sobre'
+    link: '/sobre',
   },
   {
     id: 3,
     name: 'Como Doar',
     active: false,
-    link: '/doe'
+    link: '/doe',
   },
   {
     id: 4,
     name: 'Contato',
     active: false,
-    link: '/contato'
-  }
+    link: '/contato',
+  },
 ]);
 
 const buttons: Ref<ButtonsProps[]> = ref([
@@ -78,22 +101,25 @@ const buttons: Ref<ButtonsProps[]> = ref([
     text: 'Doar',
     background: '#C32F34',
     color: '#ffffff',
-    link: '/doe'
+    link: '/doe',
   },
   {
     text: 'Vaquinha',
     background: '#F2902F',
     color: '#522222',
-    link: '/vaquinha'
-  }
+    link: '/vaquinha',
+  },
 ]);
 
 const navigate = (button: ButtonsProps | MenuInterface) => {
   const isVaquinha = button.link === '/vaquinha';
   if (isVaquinha) {
-    window.open('https://www.vakinha.com.br/vaquinha/ajude-mocambique', '_blank');
-    return
-  };
+    window.open(
+      'https://www.vakinha.com.br/vaquinha/ajude-mocambique',
+      '_blank'
+    );
+    return;
+  }
 
   router.push(button.link);
 };
@@ -104,12 +130,16 @@ const toggleMenu = () => {
 
 const isMobile = computed(() => window.innerWidth <= 1024);
 
-watch(() => route.path, (value: string) => {
-  menu.value = menu.value.map((item) => {
-    item.active = item.link === value;
-    return item;
-  });
-}, { immediate: true });
+watch(
+  () => route.path,
+  (value: string) => {
+    menu.value = menu.value.map((item) => {
+      item.active = item.link === value;
+      return item;
+    });
+  },
+  { immediate: true }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -138,7 +168,7 @@ watch(() => route.path, (value: string) => {
     cursor: pointer;
     img {
       position: relative;
-      top:2px;
+      top: 2px;
 
       @media screen and (max-width: 1024px) {
         width: 200px;
@@ -175,7 +205,7 @@ watch(() => route.path, (value: string) => {
 
         &:hover {
           background-color: colors.$accent-dark;
-          transition: all .5s ease;
+          transition: all 0.5s ease;
         }
       }
     }
@@ -185,7 +215,7 @@ watch(() => route.path, (value: string) => {
     display: flex;
     gap: 1rem;
 
-    @media(max-width: 1024px) {
+    @media (max-width: 1024px) {
       display: none;
     }
   }
@@ -208,7 +238,9 @@ watch(() => route.path, (value: string) => {
     width: 30px;
     height: 3px;
     background: colors.$white;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
   }
 
   &.is-active {
