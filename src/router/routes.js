@@ -5,13 +5,29 @@ const router = createRouter({
   routes: [
     {
       path: '',
-      component: () => import('@/views/home/Home.vue'),
-    },
+      component: () => import('@/views/layout/Layout.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('@/views/home/Home.vue'),
+        },
+    
+        {
+          path: '/sobre',
+          component: () => import('@/views/about/About.vue'),
+        },
 
-    {
-      path: '/:catchAll(.*)*',
-      component: () => import('@/views/comingSoon/ComingSoon.vue'),
-    },
+        {
+          path: '/doe',
+          component: () => import('@/views/donate/Donate.vue'),
+        },
+    
+        {
+          path: '/:catchAll(.*)*',
+          component: () => import('@/views/comingSoon/ComingSoon.vue'),
+        },
+      ],
+    }
   ],
 });
 

@@ -31,19 +31,19 @@ const highlights: Ref<HighlightInterface[]> = ref([
   {
     id: 1,
     label: 'Doações',
-    value: '20',
+    value: '200',
     icon: 'donate',
   },
   {
     id: 2,
     label: 'Vaquinha virtual',
-    value: '0k',
+    value: '7500k',
     icon: 'dollar',
   },
   {
     id: 3,
     label: 'Total Arrecadado',
-    value: '2k',
+    value: '10k',
     icon: 'dollar',
   },
 ]);

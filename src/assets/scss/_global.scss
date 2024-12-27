@@ -1,0 +1,31 @@
+@use '@/assets/scss/colors.scss' as colors;
+@use '@/assets/scss/fonts.scss' as fonts;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1453px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Poppins', serif;
+  background: colors.$primary;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: colors.$accent-light; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: colors.$secondary; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 2px solid colors.$secondary; /* creates padding around scroll thumb */
+}

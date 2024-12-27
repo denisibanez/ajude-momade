@@ -88,12 +88,6 @@ const menu: Ref<MenuInterface[]> = ref([
     active: false,
     link: '/doe',
   },
-  {
-    id: 4,
-    name: 'Contato',
-    active: false,
-    link: '/contato',
-  },
 ]);
 
 const buttons: Ref<ButtonsProps[]> = ref([
@@ -122,6 +116,10 @@ const navigate = (button: ButtonsProps | MenuInterface) => {
   }
 
   router.push(button.link);
+
+  if (isMobile.value) {
+    toggleMenu();
+  }
 };
 
 const toggleMenu = () => {
@@ -282,6 +280,8 @@ watch(
       flex-direction: column;
       width: 100%;
       gap: 0;
+      position: relative;
+      height: 100vh;
       li {
         margin: 0;
         padding: 0;
@@ -299,7 +299,7 @@ watch(
           height: 120px;
           gap: 2rem;
           border-bottom: none;
-          position: fixed;
+          position: abolute;
           bottom: 0;
         }
       }

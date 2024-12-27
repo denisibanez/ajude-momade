@@ -1,21 +1,15 @@
 <template>
   <div class="home__wrapper">
-    <div class="container">
-      <!-- Header Component -->
-      <HeaderComponent />
+    <!-- Full Banner -->
+    <FullBannerComponent />
 
-      <!-- Full Banner -->
-      <FullBannerComponent />
-
-      <!-- Highlight Component -->
-      <HighlightComponent />
-    </div>
+    <!-- Highlight Component -->
+    <HighlightComponent />
   </div>
 </template>
 
 <script setup lang="ts">
 import {
-  HeaderComponent,
   FullBannerComponent,
   HighlightComponent,
 } from '@/components';

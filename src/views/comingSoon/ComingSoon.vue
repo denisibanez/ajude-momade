@@ -1,17 +1,14 @@
 <template>
   <div class="comingSoonComponent__wrapper">
-    <div class="container">
-      <HeaderComponent />
-      <div class="comingSoonComponent__body">
-        <img src="@/assets/images/cooming.png" alt="" />
-        <h1 class="poppins-semibold">Em Breve</h1>
-        <ButtonsComponent
-          text="Voltar"
-          background="#C32F34"
-          color="#ffffff"
-          @handleButtonClick="navigate"
-        />
-      </div>
+    <div class="comingSoonComponent__body">
+      <img src="@/assets/images/cooming.png" alt="" />
+      <h1 class="poppins-semibold">Em Breve</h1>
+      <ButtonsComponent
+        text="Voltar"
+        background="#C32F34"
+        color="#ffffff"
+        @handleButtonClick="navigate"
+      />
     </div>
   </div>
 </template>
